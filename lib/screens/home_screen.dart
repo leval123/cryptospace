@@ -3,6 +3,7 @@ import 'package:cryptospace/utilities/constants.dart';
 import 'package:cryptospace/utilities/helpers.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'detail_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   static final String id = "home_screen";
@@ -20,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
       setState(() {
         _loading = true;
       });
-      final response = await Dio().get("https://api.coincap.io/v2/assets");
+      final response = await Dio().get("https://$baseUrl$cryptosPath");
       List<Crypto> data = response.data['data']
           .map(
             (item) {
@@ -34,12 +35,11 @@ class _HomeScreenState extends State<HomeScreen> {
         _cryptos = data;
       });
     } catch (e) {
-      /* ScaffoldMessenger.of(context).showSnackBar(
+      ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text('Failed to fetch cryptos'),
         ),
-      );*/
-      print(e);
+      );
     } finally {
       setState(() {
         _loading = false;
@@ -91,6 +91,15 @@ class _HomeScreenState extends State<HomeScreen> {
               itemBuilder: (context, index) {
                 final crypto = _cryptos[index];
                 return ListTile(
+                  contentPadding: const EdgeInsets.all(16.0),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DetailScreen(crypto: crypto),
+                      ),
+                    );
+                  },
                   title: Text(
                     crypto.name,
                     style: TextStyle(color: kGreenColor),

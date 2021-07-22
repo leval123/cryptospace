@@ -1,4 +1,5 @@
 import 'package:cryptospace/models/crypto.dart';
+import 'package:cryptospace/utilities/constants.dart';
 import 'package:cryptospace/utilities/helpers.dart';
 import 'package:flutter/material.dart';
 
@@ -14,19 +15,17 @@ class DetailScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         brightness: Brightness.light,
-        iconTheme: IconThemeData(
-          color: Theme.of(context).scaffoldBackgroundColor,
-        ),
+        iconTheme: IconThemeData(color: kGreenColor),
         title: Row(
           children: [
             getPrefixIcon(
               crypto.changePercent24Hr,
-              color: Theme.of(context).scaffoldBackgroundColor,
+              color: kGreyColor,
             ),
             Text(
               crypto.name,
               style: TextStyle(
-                color: Theme.of(context).scaffoldBackgroundColor,
+                color: kGreyColor,
               ),
             ),
           ],
@@ -38,61 +37,61 @@ class DetailScreen extends StatelessWidget {
             ListTile(
               title: Text(
                 'RANK',
-                style: Theme.of(context).textTheme.subtitle2,
+                style: TextStyle(color: kGreenColor),
               ),
               subtitle: Text(
                 crypto.rank.toString(),
-                style: Theme.of(context).textTheme.headline1,
+                style: TextStyle(color: kGreyColor),
               ),
             ),
             ListTile(
               title: Text(
                 'NAME',
-                style: Theme.of(context).textTheme.subtitle2,
+                style: TextStyle(color: kGreenColor),
               ),
               subtitle: Text(
                 crypto.name,
-                style: Theme.of(context).textTheme.headline1,
+                style: TextStyle(color: kGreyColor),
               ),
             ),
             ListTile(
               title: Text(
                 'SYMBOL',
-                style: Theme.of(context).textTheme.subtitle2,
+                style: TextStyle(color: kGreenColor),
               ),
               subtitle: Text(
                 crypto.symbol,
-                style: Theme.of(context).textTheme.headline1,
+                style: TextStyle(color: kGreyColor),
               ),
             ),
             ListTile(
               title: Text(
                 'PRICE',
-                style: Theme.of(context).textTheme.subtitle2,
+                style: TextStyle(color: kGreenColor),
               ),
               subtitle: Text(
                 "${crypto.priceUsd.toStringAsFixed(2)} USD",
-                style: Theme.of(context).textTheme.headline1,
+                style: TextStyle(color: kGreyColor),
               ),
             ),
             ListTile(
               title: Text(
                 'PERCENT CHANGE (24hr)',
-                style: Theme.of(context).textTheme.subtitle2,
+                style: TextStyle(color: kGreenColor),
               ),
               subtitle: Text(
                 "${crypto.changePercent24Hr.toStringAsFixed(2)}%",
-                style: Theme.of(context).textTheme.headline1,
+                style: TextStyle(color: kGreyColor),
               ),
             ),
             ListTile(
               title: Text(
                 'MARKET CAP',
-                style: Theme.of(context).textTheme.subtitle2,
+                style: TextStyle(color: kGreenColor),
               ),
               subtitle: Text(
                 "${crypto.marketCapUsd.toStringAsFixed(2)} USD",
-                style: Theme.of(context).textTheme.headline1,
+                style: TextStyle(color: kGreyColor),
               ),
             ),
           ],

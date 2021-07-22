@@ -41,7 +41,7 @@ flutter_icons:
   adaptive_icon_foreground: "assets/images/logo.png"
 
 flutter_native_splash:
-  color: "#EC4561"
+  color: "#171A1E"
   image: "assets/images/logo.png"
   android: true
   ios: true
