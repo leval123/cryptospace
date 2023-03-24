@@ -6,8 +6,6 @@ Cryptocurrency Tracker
 
 ![cryptospace](https://user-images.githubusercontent.com/26859947/121122772-054ddf00-c7f0-11eb-95b4-683f83f5dfa2.png)
 
-[Slides and Assets](https://drive.google.com/drive/folders/1URk9h1hyBR1w9rNcyUesPKCHVcq_R-l3?usp=sharing)
-
 ### API 
 
 [coincap.io](https://docs.coincap.io/)
